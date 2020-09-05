@@ -6,8 +6,7 @@ class Counter extends Component {
   };
 
   render() {
-    let classes = "badge  m-2 badge-";
-    classes += this.state.count === 0? "warning" : "primary"
+    let classes = this.getBadgeClasses();
 
     return (
       <React.Fragment>
@@ -20,6 +19,12 @@ class Counter extends Component {
         </button>
       </React.Fragment>
     );
+  }
+
+  getBadgeClasses() {
+    let classes = "badge  m-2 badge-";
+    classes += this.state.count === 0 ? "warning" : "primary";
+    return classes;
   }
 
   getCount() {
